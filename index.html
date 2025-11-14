@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Appointment Management Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo"><img src="images/web.png" alt="logo"><h2>BoookMyDoc</h2></h1>
+            <ul class="nav-links">
+                <li><a href="#" onclick="showPage('doctors')">Doctors</a></li>
+                <li><a href="#" onclick="showPage('bookings')">My Bookings</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div id="doctors-page" class="page active">
+            <h2>Available Doctors</h2>
+            <div id="doctors-list" class="doctors-grid">
+            </div>
+        </div>
+
+        <div id="booking-page" class="page">
+            <h2>Book an Appointment</h2>
+            <form id="booking-form" class="booking-form">
+                <div class="form-group">
+                    <label for="patient-name">Patient Name</label>
+                    <input type="text" id="patient-name" name="patientName" required>
+                    <span class="error-message" id="error-patient-name"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="doctor-select">Select Doctor</label>
+                    <select id="doctor-select" name="doctorId" required>
+                        <option value="">-- Choose a Doctor --</option>
+                        <!-- Options will be populated by JavaScript -->
+                    </select>
+                    <span class="error-message" id="error-doctor-select"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="appointment-date">Appointment Date</label>
+                    <input type="date" id="appointment-date" name="date" required>
+                    <span class="error-message" id="error-appointment-date"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="appointment-time">Appointment Time</label>
+                    <select id="appointment-time" name="time" required>
+                        <option value="">-- Select Time --</option>
+                        <option value="09:00">09:00 AM</option>
+                        <option value="10:00">10:00 AM</option>
+                        <option value="11:00">11:00 AM</option>
+                        <option value="12:00">12:00 PM</option>
+                        <option value="14:00">02:00 PM</option>
+                        <option value="15:00">03:00 PM</option>
+                        <option value="16:00">04:00 PM</option>
+                        <option value="17:00">05:00 PM</option>
+                    </select>
+                    <span class="error-message" id="error-appointment-time"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">Additional Notes (Optional)</label>
+                    <textarea id="notes" name="notes" rows="4" placeholder="Any specific concerns or notes for the doctor"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Book Appointment</button>
+                <button type="reset" class="btn btn-secondary">Clear Form</button>
+            </form>
+            <div id="booking-success" class="success-message"></div>
+        </div>
+
+        <div id="bookings-page" class="page">
+            <h2>My Appointments</h2>
+            <div id="bookings-list" class="bookings-list">
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p> BookmyDoc - Doctor's Appointment Management System</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
