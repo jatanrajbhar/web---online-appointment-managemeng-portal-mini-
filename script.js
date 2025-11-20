@@ -1,4 +1,3 @@
-// Sample doctors data (in-memory storage)
 const doctors = [
     {
         id: 1,
@@ -348,3 +347,4 @@ function formatTime(timeString) {
     return `${displayHour}:${minutes} ${ampm}`;
 
 }
+
