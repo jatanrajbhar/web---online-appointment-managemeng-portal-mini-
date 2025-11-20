@@ -2,10 +2,10 @@
 const doctors = [
     {
         id: 1,
-        name: 'Dr. Rajesh Kumar',
-        specialization: 'Cardiology',
+        name: 'Dr. Rashmi Pawar',
+        specialization: 'Homopathy',
         fee: 500,
-        experience: '15 years'
+        experience: '5 years'
     },
     {
         id: 2,
@@ -44,10 +44,8 @@ const doctors = [
     }
 ];
 
-// Appointment bookings (in-memory storage)
 let appointments = JSON.parse(localStorage.getItem('appointments')) || [];
 
-// Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
     displayDoctors();
     populateDoctorSelect();
@@ -348,4 +346,5 @@ function formatTime(timeString) {
     const ampm = hour >= 12 ? 'PM' : 'AM';
     const displayHour = hour % 12 || 12;
     return `${displayHour}:${minutes} ${ampm}`;
+
 }
